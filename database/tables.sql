@@ -1,7 +1,9 @@
+CREATE SCHEMA sport_impulse;
+
 -- Create the "Sports" table using the custom sequence
 CREATE TABLE Sports
 (
-    sport_id    INT PRIMARY KEY DEFAULT nextval('sports_seq'),
+    sport_id    SERIAL PRIMARY KEY NOT NULL,
     name        VARCHAR(50) NOT NULL,
     description TEXT
 );
@@ -9,7 +11,7 @@ CREATE TABLE Sports
 -- Create the "Referees" table using the custom sequence
 CREATE TABLE Referees
 (
-    referee_id  INT PRIMARY KEY DEFAULT nextval('referees_seq'),
+    referee_id  SERIAL PRIMARY KEY NOT NULL,
     name        VARCHAR(100) NOT NULL,
     sport_id    INT          NOT NULL,
     description TEXT,
@@ -19,7 +21,7 @@ CREATE TABLE Referees
 -- Create the "Tournaments" table using the custom sequence
 CREATE TABLE Tournaments
 (
-    tournament_id INT PRIMARY KEY DEFAULT nextval('tournaments_seq'),
+    tournament_id SERIAL PRIMARY KEY NOT NULL,
     sport_id      INT          NOT NULL,
     name          VARCHAR(100) NOT NULL,
     start_date    DATE         NOT NULL,
@@ -31,7 +33,7 @@ CREATE TABLE Tournaments
 -- Create the "Teams" table using the custom sequence
 CREATE TABLE Teams
 (
-    team_id     INT PRIMARY KEY DEFAULT nextval('teams_seq'),
+    team_id     SERIAL PRIMARY KEY NOT NULL,
     name        VARCHAR(100) NOT NULL,
     sport_id    INT          NOT NULL,
     description TEXT,
@@ -41,7 +43,7 @@ CREATE TABLE Teams
 -- Create the "Players" table using the custom sequence
 CREATE TABLE Players
 (
-    player_id   INT PRIMARY KEY DEFAULT nextval('players_seq'),
+    player_id   SERIAL PRIMARY KEY NOT NULL,
     name        VARCHAR(100) NOT NULL,
     sport_id    INT          NOT NULL,
     description TEXT,
@@ -62,7 +64,7 @@ CREATE TABLE TeamsPlayers
 -- Create the "Matches" table using the custom sequence
 CREATE TABLE Matches
 (
-    match_id      INT PRIMARY KEY DEFAULT nextval('matches_seq'),
+    match_id      SERIAL PRIMARY KEY NOT NULL,
     tournament_id INT         NOT NULL,
     match_date    TIMESTAMPTZ NOT NULL,
     team1_id      INT,
@@ -80,7 +82,7 @@ CREATE TABLE Matches
 -- Create the "TournamentRounds" table using the custom sequence
 CREATE TABLE TournamentRounds
 (
-    round_id      INT PRIMARY KEY DEFAULT nextval('tournamentrounds_seq'),
+    round_id      SERIAL PRIMARY KEY NOT NULL,
     tournament_id INT         NOT NULL,
     name          VARCHAR(50) NOT NULL,
     start_date    DATE        NOT NULL,
