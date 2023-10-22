@@ -1,4 +1,3 @@
 FROM tomcat:latest
-ADD target/sportImpulse.war /usr/local/tomcat/webapps/
-EXPOSE 8085
+COPY target/sportImpulse.war /usr/local/tomcat/webapps/
 CMD ["catalina.sh", "run"]

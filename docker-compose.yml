@@ -1,13 +1,16 @@
 version: '3'
 
 services:
-  sportimpulse:
-    depends_on:
-      - postgresql
-    build:
-      context: .
-    ports:
-      - "8085:8085"
+#  sportimpulse:
+#    depends_on:
+#      - postgresql
+#    build:
+#      context: .
+#    environment:
+#      - JAVA_OPTS= -agentlib:jdwp=transport=dt_socket,address=*:8000,server=y,suspend=n
+#    ports:
+#      - "8085:8085"
+#      - "8000:8000"
 
 
   postgresql:
