@@ -29,10 +29,10 @@ VALUES ('Player 1', 1, 'Soccer player'),
        ('Player 2', 1, 'Soccer player');
 
 -- Insert sample data into the "TeamsPlayers" table
-INSERT INTO TeamsPlayers (team_id, player_id, role)
-VALUES (1, 1, 'Captain'),
-       (2, 2, 'Star player'),
-       (1, 3, 'Player');
+INSERT INTO TeamsPlayers (team_id, player_id)
+VALUES (1, 1),
+       (2, 2),
+       (1, 3);
 
 -- Insert sample data into the "Matches" table
 INSERT INTO Matches (tournament_id, match_date, team1_id, team2_id, referee_id, location, result, score)
@@ -41,10 +41,10 @@ VALUES (1, '2023-06-01 18:00:00', 1, 3, 1, 'Stadium A', 'Team A Win', '2-1'),
        (3, '2023-07-02 15:00:00', 3, 1, 3, 'Wimbledon Courts', 'Player 2 Win', '6-3, 6-4');
 
 -- Insert sample data into the "TournamentRounds" table
-INSERT INTO TournamentRounds (tournament_id, name, start_date, end_date)
-VALUES (1, 'Group Stage', '2023-06-01', '2023-06-15'),
-       (2, 'Conference Finals', '2023-06-10', '2023-06-30'),
-       (3, 'Round of 16', '2023-07-01', '2023-07-07');
+INSERT INTO TournamentRounds (name, start_date, end_date)
+VALUES ('Group Stage', '2023-06-01', '2023-06-15'),
+       ('Conference Finals', '2023-06-10', '2023-06-30'),
+       ('Round of 16', '2023-07-01', '2023-07-07');
 
 -- Insert sample data into the "RoundMatches" table
 INSERT INTO RoundMatches (round_id, match_id)

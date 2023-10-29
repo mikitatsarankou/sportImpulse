@@ -55,7 +55,6 @@ CREATE TABLE TeamsPlayers
 (
     team_id   INT NOT NULL,
     player_id INT NOT NULL,
-    role      VARCHAR(20),
     PRIMARY KEY (team_id, player_id),
     FOREIGN KEY (team_id) REFERENCES Teams (team_id),
     FOREIGN KEY (player_id) REFERENCES Players (player_id)
@@ -83,11 +82,9 @@ CREATE TABLE Matches
 CREATE TABLE TournamentRounds
 (
     round_id      SERIAL PRIMARY KEY NOT NULL,
-    tournament_id INT         NOT NULL,
     name          VARCHAR(50) NOT NULL,
     start_date    DATE        NOT NULL,
-    end_date      DATE        NOT NULL,
-    FOREIGN KEY (tournament_id) REFERENCES Tournaments (tournament_id)
+    end_date      DATE        NOT NULL
 );
 
 -- Create the "RoundMatches" table using the custom sequence
