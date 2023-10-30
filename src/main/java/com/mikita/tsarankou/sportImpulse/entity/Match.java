@@ -23,7 +23,6 @@ import lombok.Setter;
 
 @Getter
 @Setter
-@Data
 @Builder(toBuilder = true)
 @NoArgsConstructor
 @AllArgsConstructor

@@ -7,22 +7,22 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.mikita.tsarankou.sportImpulse.entity.Match;
-import com.mikita.tsarankou.sportImpulse.repository.MatchRepository;
+import com.mikita.tsarankou.sportImpulse.dto.MatchDto;
+import com.mikita.tsarankou.sportImpulse.service.MatchService;
 
 @RestController
 @RequestMapping("v1/matches")
 public class MatchController {
 
-    final MatchRepository matchRepository;
+    final MatchService matchService;
 
     @Autowired
-    public MatchController(MatchRepository matchRepository) {
-        this.matchRepository = matchRepository;
+    public MatchController(MatchService matchService) {
+        this.matchService = matchService;
     }
 
     @GetMapping()
-    public List<Match> getAllMatches() {
-        return matchRepository.findAll();
+    public List<MatchDto> getAllMatches() {
+        return matchService.findAll();
     }
 }

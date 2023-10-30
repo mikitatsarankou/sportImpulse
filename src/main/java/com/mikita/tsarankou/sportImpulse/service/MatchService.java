@@ -1,7 +1,9 @@
 package com.mikita.tsarankou.sportImpulse.service;
 
-import org.springframework.stereotype.Service;
+import java.util.List;
 
-@Service
+import com.mikita.tsarankou.sportImpulse.dto.MatchDto;
+
 public interface MatchService {
+    List<MatchDto> findAll();
 }
