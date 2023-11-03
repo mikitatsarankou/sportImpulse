@@ -12,5 +12,7 @@ import lombok.NonNull;
 
 @Repository
 public interface MatchRepository extends JpaRepository<Match, Long> {
-    // You can add custom query methods here if needed
+
+    @Query(value = "SELECT m from Match m left join fetch m.tournament t left join fetch t.sport")
+    @NonNull List<Match> findAll();
 }
