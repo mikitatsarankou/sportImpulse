@@ -5,7 +5,7 @@ import lombok.Setter;
 
 @Getter
 @Setter
-public class TeamDto {
+public class RefereeDto {
     private Long id;
     private String name;
     private String description;

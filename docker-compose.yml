@@ -1,16 +1,16 @@
 version: '3'
 
 services:
-#  sportimpulse:
-#    depends_on:
-#      - postgresql
-#    build:
-#      context: .
-#    environment:
-#      - JAVA_OPTS= -agentlib:jdwp=transport=dt_socket,address=*:8000,server=y,suspend=n
-#    ports:
-#      - "8085:8085"
-#      - "8000:8000"
+  #  sportimpulse:
+  #    depends_on:
+  #      - postgresql
+  #    build:
+  #      context: .
+  #    environment:
+  #      - JAVA_OPTS= -agentlib:jdwp=transport=dt_socket,address=*:8000,server=y,suspend=n
+  #    ports:
+  #      - "8085:8085"
+  #      - "8000:8000"
 
 
   postgresql:
@@ -24,6 +24,3 @@ services:
       POSTGRES_ROOT_PASSWORD: ${POSTGRES_ROOT_PASSWORD}
     ports:
       - ${POSTGRES_PORT}:5432
-    volumes:
-      - ./database/tables.sql:/docker-entrypoint-initdb.d/1.sql
-      - ./database/data.sql:/docker-entrypoint-initdb.d/3.sql
